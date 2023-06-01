@@ -10,16 +10,8 @@ module.exports = {
             link: "/technical-documentation/前端批量导入数据总结"
           },
           {
-            text: "平台权限使用文档",
-            link: "/technical-documentation/平台权限使用文档"
-          },
-          {
-            text: "中台子项目权限配置",
-            link: "/technical-documentation/中台子项目权限配置"
-          },
-          {
-            text: "中台子项目权限使用",
-            link: "/technical-documentation/中台子项目权限使用"
+            text: "录入玩家ID总结",
+            link: "/technical-documentation/录入玩家ID总结"
           },
         ]
       },
