@@ -29,6 +29,15 @@ module.exports = {
         ]
       },
       {
+        text: "全局混入",
+        items: [
+          {
+            text: "base-page-mixin",
+            link: "/mixins/base-page-mixin"
+          },
+        ]
+      },
+      {
         text: "指令",
         items: [
           {
