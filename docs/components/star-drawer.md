@@ -1,6 +1,7 @@
-### &lt;<!-- name:start -->c-aside<!-- name:end -->/&gt;
+### &lt;<!-- name:start -->star-drawer<!-- name:end -->/&gt;
 
 <!-- desc:start -->
+抽屉组件
 <!-- desc:end -->
 
 ### Props

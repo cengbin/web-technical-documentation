@@ -1,6 +1,7 @@
-### &lt;<!-- name:start -->c-aside<!-- name:end -->/&gt;
+### &lt;<!-- name:start -->star-tabs<!-- name:end -->/&gt;
 
 <!-- desc:start -->
+标签页组件
 <!-- desc:end -->
 
 ### Props

@@ -51,7 +51,19 @@ module.exports = {
         items: [
           {
             text: "Tag 标签",
-            link: "/components/c-tag"
+            link: "/components/star-tag"
+          },
+          {
+            text: "Tabs 标签页",
+            link: "/components/star-tabs"
+          },
+          {
+            text: "Dialog 对话框",
+            link: "/components/star-dialog"
+          },
+          {
+            text: "Drawer 抽屉",
+            link: "/components/star-drawer"
           },
         ]
       },
@@ -59,12 +71,12 @@ module.exports = {
         text: "业务组件",
         items: [
           {
-            text: "时区",
-            link: "/components/时区"
+            text: "Timezone 时区",
+            link: "/components/star-timezone"
           },
           {
-            text: "服务器",
-            link: "/components/服务器"
+            text: "Server 服务器",
+            link: "/components/star-server"
           },
         ]
       },
