@@ -13,6 +13,10 @@ module.exports = {
             text: "录入玩家ID总结",
             link: "/technical-documentation/录入玩家ID总结"
           },
+          {
+            text: "获取游戏配置总结",
+            link: "/technical-documentation/获取游戏配置总结"
+          },
         ]
       },
       {
