@@ -20,19 +20,6 @@ module.exports = {
         ]
       },
       {
-        text: "开始",
-        items: [
-          {
-            text: "简介",
-            link: "/start/introduction"
-          },
-          {
-            text: "快速上手",
-            link: "/start/快速上手"
-          }
-        ]
-      },
-      {
         text: "全局混入",
         items: [
           {
@@ -47,40 +34,6 @@ module.exports = {
           {
             text: "v-auth",
             link: "/directive/v-auth"
-          },
-        ]
-      },
-      {
-        text: "基础组件",
-        items: [
-          {
-            text: "Tag 标签",
-            link: "/components/star-tag"
-          },
-          {
-            text: "Tabs 标签页",
-            link: "/components/star-tabs"
-          },
-          {
-            text: "Dialog 对话框",
-            link: "/components/star-dialog"
-          },
-          {
-            text: "Drawer 抽屉",
-            link: "/components/star-drawer"
-          },
-        ]
-      },
-      {
-        text: "业务组件",
-        items: [
-          {
-            text: "Timezone 时区",
-            link: "/components/star-timezone"
-          },
-          {
-            text: "Server 服务器",
-            link: "/components/star-server"
           },
         ]
       },
