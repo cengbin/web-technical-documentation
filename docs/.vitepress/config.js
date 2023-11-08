@@ -72,6 +72,24 @@ function deepReadDirSync(dirPath, parent) {
 
 deepReadDirSync(resolvePath('../'), menus)
 
+let sidebar = menus.items;
+let n = sidebar.length;
+for (let i = 1; i <= n - 1; i++) {
+  for (let j = 1; j <= n - i; j++) {
+    let prevItem = sidebar[j - 1]
+    let curItem = sidebar[j]
+    let prevValue = Number(prevItem.text.split(" ")[0])
+    let curValue = Number(curItem.text.split(" ")[0])
+    if (!isNaN(prevValue) && !isNaN(curValue)) {
+      if (prevValue > curValue) {
+        let temp = sidebar[j - 1];
+        sidebar[j - 1] = sidebar[j]
+        sidebar[j] = temp;
+      }
+    }
+  }
+}
+
 // console.log('menus:', menus)
 
 module.exports = {
