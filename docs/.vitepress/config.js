@@ -90,6 +90,10 @@ for (let i = 1; i <= n - 1; i++) {
   }
 }
 
+sidebar.forEach(item=>{
+  item.text = item.text.split(" ").slice(1).join(" ");
+})
+
 // console.log('menus:', menus)
 
 module.exports = {
