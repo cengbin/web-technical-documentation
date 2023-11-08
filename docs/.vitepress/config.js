@@ -1,42 +1,84 @@
+const fs = require('fs')
+const path = require('path')
+
+function resolvePath(dir) {
+  return path.resolve(__dirname, './', dir)
+}
+
+let menus = {
+  text: '',
+  items: [],
+  path: '',
+}
+
+let exclude = [
+  'ESLint + Prettier',
+  'husky + lint-staged + commitlint',
+  '其他',
+  'html-examples',
+  'image',
+  'old',
+  'test',
+  'demo',
+  'demo1',
+  'demo2',
+  'demo3',
+  'picture-lazy-loading',
+  'img',
+  'seajs-module-demo.js',
+  'es6-module-demo',
+  'render',
+  '1 IIFE-module-demo',
+  '2 CommonJS（Node.js）',
+  '3 AMD（RequireJS）',
+  '4 CMD（SeaJS）',
+  '5 UMD',
+  '6 ES6 Module',
+]
+
+function deepReadDirSync(dirPath, parent) {
+  console.log('dirPath:', dirPath)
+  let files = fs.readdirSync(dirPath) // 该文件夹下的所有文件名称 (文件夹 + 文件)
+  // console.log("files:", files)
+  files.forEach(file => {
+    if (exclude.includes(file))
+      return;
+
+    if (file.substring(0, 1) !== '.') {
+      var stat = fs.lstatSync(dirPath + '/' + file)
+      if (stat.isDirectory()) {
+        let item = {
+          text: file,
+          path: parent.path + `/${file}`
+        }
+
+        let readmePath = dirPath + '/' + file + '/' + 'README.md';
+        let bo = fs.existsSync(readmePath)
+        if (bo) {
+          item.link = parent.path + `/${file}/README`
+        }
+        // console.log('item:', item)
+
+        if (!parent.items) {
+          parent.items = []
+        }
+        parent.items.push(item)
+
+        deepReadDirSync(dirPath + '/' + file, item)
+      }
+    }
+  })
+}
+
+deepReadDirSync(resolvePath('../'), menus)
+
+// console.log('menus:', menus)
+
 module.exports = {
+  base: '/web-technical-documentation/dist/',
+  outDir: '../dist',
   title: '前端开发技术文档',
   themeConfig: {
-    sidebar: [
-      {
-        text: "技术文档",
-        items: [
-          {
-            text: "前端批量导入数据总结",
-            link: "/technical-documentation/前端批量导入数据总结"
-          },
-          {
-            text: "录入玩家ID总结",
-            link: "/technical-documentation/录入玩家ID总结"
-          },
-          {
-            text: "获取游戏配置总结",
-            link: "/technical-documentation/获取游戏配置总结"
-          },
-        ]
-      },
-      {
-        text: "全局混入",
-        items: [
-          {
-            text: "base-page-mixin",
-            link: "/mixins/base-page-mixin"
-          },
-        ]
-      },
-      {
-        text: "指令",
-        items: [
-          {
-            text: "v-auth",
-            link: "/directive/v-auth"
-          },
-        ]
-      },
-    ]
+    sidebar: menus.items
   }
 };
